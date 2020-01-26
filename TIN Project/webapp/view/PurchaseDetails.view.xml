@@ -1,0 +1,46 @@
+<mvc:View controllerName="gavdi.sandbox.Tami_training_app.controller.PurchaseDetails" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" displayBlock="true" xmlns:m="sap.m" xmlns="sap.ui.table">
+        <Table
+            rows="{PurchaseModel>/results}"
+            selectionMode="MultiToggle">
+            <extension>
+                <m:OverflowToolbar>
+                    <m:Title id="title" text="Products"/>
+                    <m:Button id="editPurchaseButton" text="Edit" press="onClickEditPurchaseButton"/>
+                </m:OverflowToolbar>
+            </extension>
+            <columns>
+                <Column width="8rem">
+                    <m:Label text="Name" />
+                    <template>
+                        <m:Text text="{PurchaseModel>EmpName}" wrapping="false" />
+                    </template>
+                </Column>
+                <Column width="9rem">
+                    <m:Label text="Surname" />
+                    <template>
+                        <m:Text text="{ProdName}" wrapping="false" />
+                    </template>
+                </Column>
+                <Column width="6rem">
+                    <m:Label text="Product" />
+                    <template>
+                        <m:Text text="{PurchaseModel>Basket/results/ProdName}" wrapping="false" />
+                    </template>
+                </Column>
+                <Column width="5rem">
+                    <m:Label text="Amount" />
+                    <template>
+                        <m:Input value="{PurchaseModel>Amount}"/>
+                    </template>
+                </Column>
+                <Column width="6rem">
+                    <m:Label text="Total Price" />
+                    <template>
+                        <m:Input value="{Amount}"/>
+                    </template>
+                </Column>
+            </columns>
+        </Table>
+
+</mvc:View>

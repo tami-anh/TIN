@@ -1,0 +1,4 @@
+<mvc:View controllerName="gavdi.sandbox.Tami_training_app.controller.PurchaseDetails" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+    <App id="app" />
+</mvc:View>

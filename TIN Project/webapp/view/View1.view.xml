@@ -1,0 +1,153 @@
+<mvc:View controllerName="gavdi.sandbox.Tami_training_app.controller.View1" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+				<Page id="page" title="{i18n>Grocery shop}">
+					<content>
+						<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}"
+							class="sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter text="Customers">
+									<Image class="responsive" src="./img/grocery.jpg" />
+									<Table id="employeeTable" mode="MultiSelect" selectionChange="onSelectionChange"
+										fixedLayout="false" items="{path: 'employeeModel>/results' }">
+										<columns>
+											<!-- 4????? -->
+											<Column visible="false" width="25%">
+												<Text text="Id" />
+											</Column>
+											<Column width="25%">
+												<Text text="Name" />
+											</Column>
+											<Column width="25%">
+												<Text text="Surname" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<Input editable="false" visible="false"
+														value="{employeeModel>EmpId}" />
+													<Input editable="false" value="{employeeModel>Vorna}" />
+													<Input editable="false" value="{employeeModel>Nachn}" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<HBox>
+										<VBox width="28%">
+										</VBox>
+										<VBox width="25%">
+											<Input width="270px" id="ename" showSuggestion="true"
+												placeholder="Enter name">
+											</Input>
+											<Input width="270px" id="sname" showSuggestion="true"
+												placeholder="Enter surname">
+											</Input>
+										</VBox>
+										<VBox width="2%">
+										</VBox>
+										<VBox>
+											<Button width="200px" id="addButton" text="Add Customer"
+												press="onClickAddButton" />
+											<Button width="200px" id="deleteButton" text="Remove Customer"
+												press="onClickDeleteButton" />
+											<Button width="200px" id="updateButton" text="Edit Customer"
+												press="onClickUpdateButton" />
+										</VBox>
+									</HBox>
+								</IconTabFilter>
+								<IconTabFilter text="Purchases">
+									<Image class="responsive" src="./img/purchase.jpg" />
+
+									 <Table id="purchaseTable" selectionChange="onSelectionPurChange" mode="MultiSelect"><!--items="{/ProductCollection}" -->
+										<headerToolbar>
+										<Toolbar>
+											<ToolbarSpacer/>
+											<Button id="addPurchaseButton" type="Accept" icon="sap-icon://add" text="Add new" press="onClickAddPurchaseButton"/>
+											<Button id="deletePurchaseButton" type="Reject" icon="sap-icon://delete" text="Delete" press="onClickDeletePurchaseButton"/>
+										</Toolbar>
+										</headerToolbar>
+									
+										<columns>
+											<Column>
+												<Text text="Customer" />
+											</Column>
+											<Column>
+												<Text text="Date" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Navigation" press="onProductPress">
+												<cells>
+													<Text text="Andrzej Sucharewski" />
+													<Text text="12.23.2009 10:43" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem type="Navigation" press="onProductPress">
+												<cells>
+													<Text text="Serhii Sucharewski" />
+													<Text text="12.23.2009 10:43" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem type="Navigation" press="onProductPress">
+												<cells>
+													<Text text="Dorek Sucharewski" />
+													<Text text="20.01.2009 12:43" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+
+								</IconTabFilter>
+								<IconTabFilter text="Products">
+									<Image class="responsive" src="./img/products.jfif" />
+
+									<Table id="productTable" mode="MultiSelect" selectionChange="onSelectionProdChange"
+										fixedLayout="false" items="{path: 'productModel>/results' }">
+										<columns>
+											<Column visible="false" width="25%">
+												<Text text="Id" />
+											</Column>
+											<Column width="25%">
+												<Text text="Product name" />
+											</Column>
+											<Column width="25%">
+												<Text text="Price" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<cells>
+													<Input editable="false" visible="false"
+														value="{productModel>ProdId}" />
+													<Input editable="false" value="{productModel>ProdName}" />
+													<Input editable="false" value="{productModel>Price}" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<HBox>
+										<VBox width="28%">
+										</VBox>
+										<VBox width="25%">
+											<Input width="270px" id="productName" placeholder="Enter product name">
+											</Input>
+											<Input width="270px" id="productPrice" placeholder="Enter price">
+											</Input>
+										</VBox>
+										<VBox width="2%">
+										</VBox>
+										<VBox>
+											<Button width="200px" text="Add Product" press="onAddProductButtonPress" />
+											<Button width="200px" text="Remove Product"
+												press="onDeleteProductButtonPress" />
+											<Button width="200px" text="Edit Product"
+												press="onUpdateProductButtonPress" />
+										</VBox>
+									</HBox>
+
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+					</content>
+				</Page>
+</mvc:View>

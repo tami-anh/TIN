@@ -1,0 +1,6 @@
+/* Enter your custom styles here */
+.responsive {
+    width: 380px;
+    height: auto;
+    padding-left: calc(50% - 190px);
+}
